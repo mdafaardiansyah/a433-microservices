@@ -6,6 +6,7 @@ services:
     image: mongo:3
     volumes:
       - app-db:/data/db
+    # Restart Policy
     restart: always
   
   # Layanan aplikasi Node.js
@@ -15,6 +16,7 @@ services:
       - "80:8080"
     depends_on:
       - item-db
+    # Restart Policy
     restart: always
 
 # Definisi volume untuk penyimpanan data permanen
