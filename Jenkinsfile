@@ -15,7 +15,7 @@ pipeline {
         DOCKER_HUB_PAT = credentials('docker-hub-pat')
         DISCORD_WEBHOOK = credentials('discord-notification')
         APP_NAME = 'karsajobs-ui'
-        DOCKER_IMAGE = "${DOCKER_HUB_CREDS_USR}/${APP_NAME}"
+        DOCKER_IMAGE = "ardidafa/${APP_NAME}"
         IMAGE_TAG = "${params.RELEASE_TAG ? params.RELEASE_TAG : env.BUILD_NUMBER}"
     }
     
@@ -56,7 +56,7 @@ pipeline {
         
         stage('Docker Push') {
             steps {
-                sh "echo ${DOCKER_HUB_PAT} | docker login -u ${DOCKER_HUB_CREDS_USR} --password-stdin"
+                sh "echo ${DOCKER_HUB_PAT} | docker login -u ardidafa --password-stdin"
                 sh "docker push ${DOCKER_IMAGE}:${IMAGE_TAG}"
                 sh "docker push ${DOCKER_IMAGE}:latest"
             }
