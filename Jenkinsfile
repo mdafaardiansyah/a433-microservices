@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     tools {
-        nodejs 'NodeJS 16' // Sesuaikan dengan versi Node.js yang dibutuhkan untuk Vue.js
+        nodejs 'NodeJS 18' // Sesuaikan dengan versi Node.js yang dibutuhkan untuk Vue.js
     }
     
     parameters {
