@@ -4,7 +4,6 @@
 # Script ini harus dijalankan dari dalam direktori karsajobs/backend
 
 # Variabel username untuk Docker Hub
-# Ganti dengan username Docker Hub Anda
 USERNAME="ardidafa"
 # Optional tag, defaultnya adalah latest atau dari parameter pertama script
 TAG="${1:-latest}"
