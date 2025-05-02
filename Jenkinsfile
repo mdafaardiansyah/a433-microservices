@@ -42,9 +42,8 @@ pipeline {
         stage('Lint Dockerfile') {
             steps {
                 sh '''
-                curl -O hadolint https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
-                chmod +x hadolint
-                ./hadolint Dockerfile || true
+                # Use docker to run hadolint instead of downloading it
+                docker run --rm -i hadolint/hadolint < Dockerfile || true
                 '''
             }
         }
