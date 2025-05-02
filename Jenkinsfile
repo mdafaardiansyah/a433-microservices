@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     tools {
-        go 'Go 1.19' // Sesuaikan dengan versi Go yang Anda gunakan
+        go 'Go 1.19' // Sesuaikan dengan versi Go yang digunakan
     }
     
     parameters {
